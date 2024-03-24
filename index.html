@@ -8,13 +8,14 @@
         <meta name="description" content="A LinkedIn mask for Art/ML">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $("a.enlarge").click(function(){
-                    $("html").toggleClass("bigger");//this affects parent element in function
-                });
-            });
-        </script>
+        <script type="importmap">
+            {
+              "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+              }
+            }
+          </script>
+        <script type="module" src="init.js"></script>
     </head>
     <header>
         <div class="search-bar">
@@ -229,37 +230,7 @@
             </div>
             <hr>
             <div class="message-body">
-                <div class="chat-message me">
-                    <img src="images/profile/main-profile-image.jpg">
-                    <div class="chat-message-contents">
-                        <div class="chat-message-details">
-                            <p><b>User Name</b></p>
-                            <sub class="gray">(He/Him) • 8:45 PM</sub>
-                        </div>
-                        <p id="message-contents">:D thanks sir</p>
-                    </div>
-                </div>
-                <div class="chat-message me">
-                    <img src="images/profile/main-profile-image.jpg">
-                    <div class="chat-message-contents">
-                        <div class="chat-message-details">
-                            <p><b>User Name</b></p>
-                            <sub class="gray">(He/Him) • 8:45 PM</sub>
-                        </div>
-                        <p id="message-contents">:D thanks sir</p>
-                    </div>
-                </div>
-                <div class="chat-message me">
-                    <img src="images/profile/main-profile-image.jpg">
-                    <div class="chat-message-contents">
-                        <div class="chat-message-details">
-                            <p><b>User Name</b></p>
-                            <sub class="gray">(He/Him) • 8:45 PM</sub>
-                        </div>
-                        <p id="message-contents">:D thanks sir</p>
-                    </div>
-                </div>
-                <div class="chat-message me">
+                <div class="chat-message bot">
                     <img src="images/profile/main-profile-image.jpg">
                     <div class="chat-message-contents">
                         <div class="chat-message-details">
@@ -290,5 +261,5 @@
             </div>
         </div>
     </div>
-        
+    <script src="linkedin.js"></script>
 </html>

@@ -439,10 +439,14 @@ header img{
 
  .chat-message{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: flex-start;
     gap: 0.5em;
     padding: 1em 1em;
+ }
+
+ .chat-message.bot {
+   flex-direction: row;
  }
 
  .chat-message img{
