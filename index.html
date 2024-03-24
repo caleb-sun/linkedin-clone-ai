@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Demo Starter — 2024</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HTML, CSS, Demo, kit, web design">
+        <meta name="description" content="A LinkedIn mask for Art/ML">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("a.enlarge").click(function(){
+                    $("html").toggleClass("bigger");//this affects parent element in function
+                });
+            });
+        </script>
+    </head>
+    <header>
+        <div class="search-bar">
+            <img src="images/icons/linkedin.svg">
+            <input type="text" class="search-bar" placeholder="Search">
+        </div>
+        <div class="top-nav">
+            <div class="nav-button">
+                <img src="images/icons/home.svg">
+                <sub>Home</sub>
+            </div>
+            <div class="nav-button">
+                <img src="images/icons/group.svg">
+                <sub>My Network</sub>
+            </div>
+            <div class="nav-button">
+                <img src="images/icons/work.svg">
+                <sub>Jobs</sub>
+            </div>
+            <div class="nav-button">
+                <img src="images/icons/chat.svg">
+                <sub>Messaging</sub>
+            </div>
+            <div class="nav-button">
+                <img src="images/icons/notifications.svg">
+                <sub>Notifications</sub>
+            </div>
+            <div class="nav-button" style="border-right: 1px solid #3C3E41;">
+                <img src="images/icons/notifications.svg">
+                <div class="nav-dropdown">
+                    <sub>Me</sub>
+                    <img src="images/icons/arrow_drop_down.svg">
+                </div>
+            </div>
+            <div class="nav-button">
+                <img src="images/icons/apps.svg">
+                <div class="nav-dropdown">
+                    <sub>For Business</sub>
+                    <img src="images/icons/arrow_drop_down.svg">
+                </div>
+            </div>
+            <div class="nav-button">
+                <img src="images/icons/smart_display.svg">
+                <sub>Learning</sub>
+            </div>
+        </div>
+    </header>
+    <div class="body">
+        <main>
+            <div class="user-profile">
+                <img class="profile" src="images/profile/main-profile-image.jpg">
+                <div style="display: flex;flex-direction: row;">
+                    <div class="profile-details" style="width: 66%">
+                        <div class="inline">
+                            <h1>Aarnav Patel</h1>
+                            <img src="images/icons/shield.svg">
+                            <sub class="gray">(He/Him)</sub>
+                            <sub>• 1st</sub>
+                        </div>
+                        <p style="padding-bottom: 0.4em;">Interaction Designer</p>
+                        <sub class="gray">New York, New York, United States • <b class="blue">Contact Information</b></sub>
+                        <sub class="blue"><b>326 connections</b></sub>
+                        <div class="mutuals">
+                            <img>
+                            <img>
+                            <sub>Teresa Louri, John Henley, and 127 other mutuals</sub>
+                        </div>
+                        <div class="inline">
+                            <a href="#">
+                                <div class="message">
+                                    <img src="images/icons/send.svg">
+                                    <p><b>Message</b></p>
+                                </div>
+                            </a>
+                            <div class="more">
+                                <p><b>More</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 33%; margin-top: 0.2em; display: flex; flex-direction: column; gap: 0.4em;">
+                        
+                        <div class="inline" style="gap: 0.5em; padding: 0;">
+                            <img src="images/profile/google.png"
+                            style="width: 36px; filter: none;">
+                            <sub><b>Google</b></sub>
+                        </div>
+                        <div class="inline" style="gap: 0.5em; padding: 0;">
+                            <img src="images/profile/open-ai.png"
+                            style="width: 36px; filter: none;">
+                            <sub><b>OpenAI</b></sub>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="highlights">
+                <h2>Highlights</h2>
+                <div class="highlight-content">
+                    <img src="images/profile/open-ai.png">
+                    <div class="highlight-text">
+                        <h3>
+                            You were both developed by OpenAI
+                        </h3>
+                        <p>
+                            You were both developed by OpenAI in 2024
+                        </p>
+                        <div class="more" style="width: 60px;">
+                            <p><b>Message</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about">
+                <h2>About</h2>
+                <p style="width: 80%;">Environments Designer @ CMU looking at reimagining our current experiences within physical and digital spaces.
+                    <br>Previously an intern at Gensler NYC. 
+                    <br>Feel free to see my work here: https://rnavpatel.github.io/Portfolio/index.html</p>
+            </div>
+            
+        </main>
+        <aside>
+            <div class="other-profiles">
+                <h3>Other similar profiles</h3>
+                <div class="other-profiles-profile">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="similar-profiles-content">
+                        <div class="inline" style="padding: 0; margin-bottom: 0.2em;">
+                            <p><b>Name</b></p>
+                            <sub class="gray"> • 1st</sub>
+                        </div>
+                        <p>
+                            Description
+                        </p>
+                        <div class="more" style="width: 60px; margin-top: 10px;">
+                            <p><b>Message</b></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="other-profiles-profile">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="similar-profiles-content">
+                        <div class="inline" style="padding: 0; margin-bottom: 0.2em;">
+                            <p><b>Name</b></p>
+                            <sub class="gray"> • 1st</sub>
+                        </div>
+                        <p>
+                            Description
+                        </p>
+                        <div class="more" style="width: 60px; margin-top: 10px;">
+                            <p><b>Message</b></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="other-profiles-profile">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="similar-profiles-content">
+                        <div class="inline" style="padding: 0;  margin-bottom: 0.2em;">
+                            <p><b>Name</b></p>
+                            <sub class="gray"> • 1st</sub>
+                        </div>
+                        <p>
+                            Description
+                        </p>
+                        <div class="more" style="width: 60px; margin-top: 10px;">
+                            <p><b>Message</b></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="other-profiles-profile">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="similar-profiles-content">
+                        <div class="inline" style="padding: 0; margin-bottom: 0.2em;">
+                            <p><b>Name</b></p>
+                            <sub class="gray"> • 1st</sub>
+                        </div>
+                        <p>
+                            Description
+                        </p>
+                        <div class="more" style="width: 60px; margin-top: 10px;">
+                            <p><b>Message</b></p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+
+        <!--this part needs to be connected to backend>--> 
+        <div class="chat-box">
+            <div class="chat-box-top">
+                <div class="chat-box-left">
+                    <img src="images/profile/main-profile-image.jpg"
+                        style="width: 30px; border-radius: 15px">
+                    <div class="chat-description">
+                        <p><b>
+                            Aarnav Patel
+                        </b>
+                        </p>
+                        <sub>
+                            Active Now
+                        </sub>
+                    </div>
+                </div>
+                <div class="chat-box-right">
+                    <img src="images/icons/more_horiz.svg">
+                    <img src="images/icons/video_call.svg">
+                    <img src="images/icons/open_in_full.svg">
+                    <img src="images/icons/close.svg">
+                </div>
+            </div>
+            <hr>
+            <div class="message-body">
+                <div class="chat-message me">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="chat-message-contents">
+                        <div class="chat-message-details">
+                            <p><b>User Name</b></p>
+                            <sub class="gray">(He/Him) • 8:45 PM</sub>
+                        </div>
+                        <p id="message-contents">:D thanks sir</p>
+                    </div>
+                </div>
+                <div class="chat-message me">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="chat-message-contents">
+                        <div class="chat-message-details">
+                            <p><b>User Name</b></p>
+                            <sub class="gray">(He/Him) • 8:45 PM</sub>
+                        </div>
+                        <p id="message-contents">:D thanks sir</p>
+                    </div>
+                </div>
+                <div class="chat-message me">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="chat-message-contents">
+                        <div class="chat-message-details">
+                            <p><b>User Name</b></p>
+                            <sub class="gray">(He/Him) • 8:45 PM</sub>
+                        </div>
+                        <p id="message-contents">:D thanks sir</p>
+                    </div>
+                </div>
+                <div class="chat-message me">
+                    <img src="images/profile/main-profile-image.jpg">
+                    <div class="chat-message-contents">
+                        <div class="chat-message-details">
+                            <p><b>User Name</b></p>
+                            <sub class="gray">(He/Him) • 8:45 PM</sub>
+                        </div>
+                        <p id="message-contents">:D thanks sir</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-box-bottom">
+                <div class="chat-input">
+                    <input class="chat-input-field" type="text" placeholder="Write a message...">
+                    <img src="images/icons/expand_less.svg">
+                </div>
+                <div class="chat-box-bottom-menu" style="border-top: 1px solid #3C3E41; padding-top: 0.5em;">
+                    <div class="chat-box-bottom-menu-left">
+                        <img src="images/icons/image.svg">
+                        <img src="images/icons/attachment.svg">
+                        <img src="images/icons/gif.svg">
+                        <img src="images/icons/sentiment_satisfied.svg">
+                    </div>
+                    <div class="chat-box-bottom-menu-right">
+                        <button class="send">Send</button>
+                        <img src="images/icons/more_horiz.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+</html>
