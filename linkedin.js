@@ -30,6 +30,7 @@ async function callGemini(msg) {
     console.log("calling gemini")
     // Retrieve the chat history from the session
     let history = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+    console.log(history.slice(0, -1)) // ignore last message because it includes message we want to send now
     
     // Access your API key (see "Set up your API key" above)
     const genAI = new GoogleGenerativeAI("AIzaSyDxSvYsZ8geXwZyEX-lotNuOutPtIkTkuw");
@@ -39,50 +40,45 @@ async function callGemini(msg) {
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
   
     const chat = model.startChat({
-      history: history,
+      history: history.slice(0,-1),
       generationConfig: {
         maxOutputTokens: 100,
       },
     });
     
     const result = await chat.sendMessage(msg);
-    const response = await result.response;
+    const response = result.response;
     const text = response.text();
-    
-    // Update the chat history with the new message and response
-    history = history.concat([{role: "user", parts: [{ text: msg }]}, {role:"model", parts: [{text: text}]}]);
-    
-    // Save the updated chat history back to the session
-    sessionStorage.setItem('chatHistory', JSON.stringify(history));
-    
+    console.log(response, text)
+
     // Return the response text
     return text;
-}
-
-function loadChatHistory() {
-        const historyJson = localStorage.getItem('chatHistory');
-        return historyJson ? JSON.parse(historyJson) : [];
-}
-
-function saveChatHistory(history) {
-    localStorage.setItem('chatHistory', JSON.stringify(history));
-}
-
-// Function to retrieve chat history
-function getChatHistory() {
-    return chatHistory;
 }
 
 // Update the chat user function to add messages to history
 function updateChatUser(input) {
     const timestamp = getCurrentTime();
     addMessageToChat('user', input, timestamp);
+    updateChatHistory('user', input)
+
+}
+
+function updateChatHistory(role, text) {
+    // Retrieve the chat history from the session
+    let history = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
+
+    // Update the chat history with the new message and response
+    history = history.concat([{ role: role, parts: [{ text: text }] }]);
+
+    // Save the updated chat history back to the session
+    sessionStorage.setItem('chatHistory', JSON.stringify(history));
 }
 
 
 // Update the chat bot function to add messages to history
 function updateChatBot(response, timestamp) {
     addMessageToChat('bot', response, timestamp);
+    updateChatHistory('model', response)
 }
 
 // Helper function to get current time in HH:mm format
@@ -99,10 +95,19 @@ sendButton.addEventListener('click', async () => {
         console.log("clicked send")
         if (userMessage) {
             updateChatUser(userMessage);
+            
+            const newMsg = await callGemini(userMessage); // Call your backend API to handle the message
             messageInput.value = ''; // Clear the input field
             messageInput.focus();   // Focus on the input field for the next message
-            const newMsg = await callGemini(userMessage); // Call your backend API to handle the message
-            updateChatBot(newMsg, getCurrentTime()); // Update the chat box with the bot response
+            setTimeout(function() {
+                if (newMsg) {
+                    updateChatBot(newMsg, getCurrentTime()); // Update the chat box with the bot response
+                } else {
+                    updateChatBot("Error generating AI message", getCurrentTime()); // Update the chat box with the bot response
+                }
+              }, 500);
+            
+            
         } else {
             console.log("no message")
         }
