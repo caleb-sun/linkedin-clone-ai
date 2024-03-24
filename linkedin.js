@@ -27,6 +27,7 @@ function addMessageToChat(sender, message, timestamp) {
 
 // Function to send to Gemini
 async function callGemini(msg) {
+    console.log("calling gemini")
     // Retrieve the chat history from the session
     let history = JSON.parse(sessionStorage.getItem('chatHistory')) || [];
     
@@ -102,5 +103,7 @@ sendButton.addEventListener('click', async () => {
             messageInput.focus();   // Focus on the input field for the next message
             const newMsg = await callGemini(userMessage); // Call your backend API to handle the message
             updateChatBot(newMsg, getCurrentTime()); // Update the chat box with the bot response
+        } else {
+            console.log("no message")
         }
 });
