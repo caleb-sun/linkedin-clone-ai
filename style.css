@@ -448,6 +448,7 @@ header img{
     background-color: #89B6F8;
     padding: 0.2em 0.8em;
     color: #3C3E41;
+    cursor:pointer;
  }
 
  .chat-message{
