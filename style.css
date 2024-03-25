@@ -250,6 +250,20 @@ header img{
     border: 4px solid  #222428;
  }
 
+ .mutuals{
+   display: flex;
+   flex-direction: row;
+   gap: 16px;
+   align-items: center;
+ }
+
+ .mutual-profiles img{
+   width: 24px;
+   border-radius: 12px;
+   border: 1.5px solid #222428;
+   margin-right: -8px;
+ }
+
  .message{
     display: flex;
     flex-direction: row;
@@ -347,9 +361,9 @@ header img{
  .chat-box{
     position: fixed;
     bottom: 0;
-    right: 20rem;
-    width: 17rem;
-    height: 25rem;
+    right: 10rem;
+    width: 25rem;
+    height: 30rem;
     border: 1px solid #3E4550;
     border-bottom: none;
     border-radius: 0.6rem 0.6rem 0 0;
@@ -385,7 +399,7 @@ header img{
    
     bottom: 0;
     position: fixed;
-    width: 17em;
+    width: 23rem;
     padding: 1em;
  }
 
@@ -396,7 +410,7 @@ header img{
     margin: 0;
     background-color: #3D4749;
     padding: 0 10px 20px;
-    width: 14em;
+    width: 25em;
     margin-bottom: 8px;
  }
 
@@ -438,6 +452,7 @@ header img{
  }
 
  .chat-message{
+   width: 20rem;
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
