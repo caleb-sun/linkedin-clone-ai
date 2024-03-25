@@ -6,16 +6,30 @@ function addMessageToChat(sender, message, timestamp) {
     // Create a new message element
     const newMessage = document.createElement('div');
     newMessage.className = sender === 'user' ? 'chat-message me' : 'chat-message bot';
-    newMessage.innerHTML = `
-        <img src="images/profile/main-profile-image.jpg">
+    if (sender === 'user') {
+        newMessage.innerHTML = `
+        <img src="images/profile/humanpfp.jpeg">
         <div class="chat-message-contents">
             <div class="chat-message-details">
-                <p><b>${sender === 'user' ? 'User Name' : 'Bot Name'}</b></p>
+                <p><b>You</b></p>
+                <sub class="gray">(They/Them) • ${timestamp}</sub>
+            </div>
+            <p id="message-contents">${message}</p>
+        </div>
+    `;
+    } else {
+        newMessage.innerHTML = `
+        <img src="images/profile/aipfp.jpeg">
+        <div class="chat-message-contents">
+            <div class="chat-message-details">
+                <p><b>Devin</b></p>
                 <sub class="gray">(He/Him) • ${timestamp}</sub>
             </div>
             <p id="message-contents">${message}</p>
         </div>
     `;
+    }
+    
 
     // Append the new message to the chat body
     chatBody.appendChild(newMessage);
