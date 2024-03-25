@@ -380,7 +380,7 @@ header img{
 }
 
 .message-body{
-    height: 20rem;
+    height: 19rem;
     overflow-y: scroll;
 }
 
@@ -414,6 +414,10 @@ header img{
     margin-bottom: 8px;
  }
 
+.chat-input-field:focus{
+   color: white;
+}
+
  .chat-input{
     display: flex;
     flex-direction: row;
@@ -441,14 +445,9 @@ header img{
     border-width:0;
     border-radius: 2em;
     margin: 0;
-    background-color: #3C3E41;
-    padding: 0.2em 0.8em;
-    color:#A6A6A8
- }
-
- .send:hover{
-    color: #3C3E41;
     background-color: #89B6F8;
+    padding: 0.2em 0.8em;
+    color: #3C3E41;
  }
 
  .chat-message{
